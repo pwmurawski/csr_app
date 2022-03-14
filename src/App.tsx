@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import CountryPage from "./pages/CountryPage/CountryPage";
@@ -8,6 +8,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/:code" element={<CountryPage />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
   const footer = <>©2022</>;
