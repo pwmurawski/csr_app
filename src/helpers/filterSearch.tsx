@@ -1,16 +1,10 @@
-interface ICountries {
-  name: string;
-  code: string;
-  continent: {
-    code: string;
-  };
-}
+import { ICountriesData } from "../interfaces/interfaces";
 
 const filterSearch = (
   search: string,
   select: string,
-  countriesData: ICountries[]
-): ICountries[] => {
+  countriesData: ICountriesData[]
+): ICountriesData[] => {
   return countriesData.filter(
     (country) =>
       country.name.toLowerCase().includes(search.toLowerCase()) &&
