@@ -9,6 +9,8 @@ interface ICountriesProps {
 }
 
 export default function CountriesCard({ countriesData }: ICountriesProps) {
+  if (!countriesData.length) return <h2>No results</h2>;
+
   return (
     <Container>
       {countriesData.map(({ name, code }) => (
